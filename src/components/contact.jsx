@@ -1,3 +1,6 @@
+import email from "../../public/assets/email.png";
+import linkedin from "../../public/assets/linkedin.png";
+
 const Contact = () => {
   return (
     <section id="contact" className="flex flex-col justify-center h-auto md:h-[70vh] mx-4 md:mx-40 pt-4">
@@ -8,7 +11,7 @@ const Contact = () => {
         <div className="flex flex-col md:flex-row justify-center rounded-3xl border border-gray-400 bg-[#fafafa] p-4">
           <div className="flex items-center justify-center gap-2 mx-4 mb-4 md:mb-0">
             <img
-              src="../public/assets/email.png"
+              src={email}
               alt="Email icon"
               className="h-10"
             />
@@ -19,7 +22,7 @@ const Contact = () => {
           
           <div className="flex items-center justify-center gap-2 mx-4">
             <img
-              src="../public/assets/linkedin.png"
+              src={linkedin}
               alt="LinkedIn icon"
               className="h-8"
             />

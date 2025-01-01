@@ -1,3 +1,9 @@
+import image1 from "../../public/assets/project-1.png";
+import image2 from "../../public/assets/project-2.png";
+import image3 from "../../public/assets/project-3.jpeg";
+import arrow from "../../public/assets/arrow.png";
+
+
 const ProjectCard = ({ name, image, github, demo }) => {
   return (
     <div className="p-6 bg-[#fafafa] rounded-3xl border border-gray-400">
@@ -37,19 +43,19 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row gap-8 mb-8 mt-8">
           <ProjectCard 
               name="Ticket Management"
-              image="../public/assets/project-1.png"
+              image={image1}
               github="https://github.com/Hitoshi-Kazuto/Ticket_Management"
               demo="https://ticket-management-frontend.vercel.app" 
           />
           <ProjectCard 
             name="WaterWise"
-            image="../public/assets/project-2.png"
+            image={image2}
             github="https://github.com/Hitoshi-Kazuto/WaterWise/tree/main"
             demo=""
           />
           <ProjectCard  
             name="Bookstore Operations"
-            image="../public/assets/project-3.jpeg"
+            image={image3}
             github="https://github.com/Hitoshi-Kazuto/Book-Store-Project"
             demo=""
           />
@@ -57,7 +63,7 @@ const Projects = () => {
       </div>
       
       <img
-        src="../public/assets/arrow.png"
+        src={arrow}
         alt="Arrow icon"
         className="h-8 cursor-pointer absolute -right-20 bottom-10"
         onClick={() => window.location.href='#contact'}

@@ -1,3 +1,7 @@
+import check from "../../public/assets/checkmark.png";
+import arrow from "../../public/assets/arrow.png";
+
+
 const ExperienceCard = ({ title, skills }) => {
   return (
     <div className="p-6 bg-white rounded-3xl border border-gray-400">
@@ -6,7 +10,7 @@ const ExperienceCard = ({ title, skills }) => {
         {skills.map((skill) => (
           <article key={skill.name} className="flex w-32 justify-start gap-2">
             <img
-              src="../public/assets/checkmark.png"
+              src={check}
               alt="Experience icon"
               className="h-6"
             />
@@ -68,7 +72,7 @@ const Experience = () => {
       </div>
       
       <img
-        src="../public/assets/arrow.png"
+        src={arrow}
         alt="Arrow icon"
         className="h-8 cursor-pointer absolute -right-20 bottom-10"
         onClick={() => window.location.href='#projects'}
