@@ -38,10 +38,14 @@ const About = () => {
           
           <div className="text-gray-600">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
+            I am a Junior year student @ JIIT, Noida. <br />
+            With a strong passion for technology 
+            and a particular inclination towards web development. I possess a keen aptitude for 
+            problem-solving and interested to mastering dynamic and user-friendly web applications.
+            I am eager to leverage my skills in collaborative projects and contribute to innovative web-based 
+            solutions in the tech industry.
+
+            
             </p>
           </div>
         </div>
