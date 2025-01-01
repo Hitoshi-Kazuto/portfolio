@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .btn {
+    @apply font-semibold transition-all duration-300 px-4 py-4 w-32 rounded-full;
+  }
+  
+  .btn-primary {
+    @apply border border-[#353535] bg-[#353535] text-white hover:bg-black;
+  }
+  
+  .btn-secondary {
+    @apply border border-[#353535] hover:bg-[#353535] hover:text-white hover:border-white;
+  }
+}
+
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+/* GENERAL */
+* {
+  @apply m-0 p-0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+html {
+  @apply scroll-smooth;
+}
+p {
+  @apply text-[rgb(85,85,85)];
+}
+
+/* TRANSITION */
+a,
+.btn {
+  @apply transition-all duration-300 ease-[ease];
+}
+
+/* DESKTOP NAV */
+nav,
+.nav-links {
+  @apply flex;
+}
+nav {
+  @apply justify-around items-center h-[17vh];
+}
+.nav-links {
+  @apply gap-8 text-2xl;
+  list-style: none;
+}
+a {
+  @apply text-[black] no-underline decoration-[white] hover:text-[grey] hover:underline hover:underline-offset-[1rem] hover:decoration-[rgb(181,181,181)];
+}
+.logo {
+  @apply text-[2rem] hover:cursor-default;
+}
+
+/* HAMBURGER MENU */
+#hamburger-nav {
+  @apply hidden;
+}
+.hamburger-menu {
+  @apply relative inline-block;
+}
+.hamburger-icon {
+  @apply flex flex-col justify-between h-6 w-[30px] cursor-pointer;
+}
+.hamburger-icon span {
+  @apply w-full h-0.5 bg-[black] transition-all duration-[0.3] ease-[ease-in-out] first:opacity-100;
+}
+.menu-links {
+  @apply absolute bg-[white] w-fit max-h-0 overflow-hidden transition-all duration-[0.3] ease-[ease-in-out] right-0 top-full;
+}
+.menu-links a {
+  @apply block text-center text-2xl text-[black] no-underline transition-all duration-[0.3] ease-[ease-in-out] p-2.5;
+}
+.menu-links li {
+  list-style: none;
+}
+.menu-links.open {
+  @apply max-h-[300px];
+}
+.hamburger-icon.open span:first-child {
+  @apply rotate-45 translate-x-2.5 translate-y-[5px];
+}
+.hamburger-icon.open span:nth-child(2) {
+  @apply opacity-0;
+}
+.hamburger-icon.open span:last-child {
+  @apply -rotate-45 translate-x-2.5 translate-y-[-5px];
+}
+.hamburger-icon span:first-child {
+  transform: none;
+}
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+/* SECTIONS */
+section {
+  @apply h-[96vh] box-border min-h-fit mx-40 my-0 pt-[4vh];
+}
+.section-container {
+  @apply flex gap-16 h-4/5;
+}
+
+/* PROFILE SECTION */
+#profile {
+  @apply flex justify-center gap-20 h-[80vh];
+}
+.section__pic-container {
+  @apply flex h-[400px] w-[400px] mx-0 my-auto h-[400px] w-[400px] mx-0 my-auto;
+}
+.section__text {
+  @apply self-center text-center;
+}
+.section__text p {
+  @apply font-semibold;
+}
+.section__text__p1 {
+  @apply text-center;
+}
+.section__text__p2 {
+  @apply text-[1.75rem] mb-4;
+}
+.title {
+  @apply text-5xl text-center;
+}
+#socials-container {
+  @apply flex justify-center gap-4 mt-4;
+}
+
+/* ICONS */
+.icon {
+  @apply cursor-pointer h-8;
+}
+
+/* BUTTONS */
+.btn-container {
+  @apply flex justify-center gap-4;
+}
+.btn {
+  @apply font-semibold text-sm transition-all duration-300 ease-[ease] w-32 p-3 rounded-[2rem];
+}
+.btn-color-1,
+.btn-color-2 {
+  @apply border border-[#353535];
+}
+.btn-color-1:hover,
+.btn-color-2:hover {
+  @apply cursor-pointer;
+}
+.btn-color-1,
+.btn-color-2:hover {
+  @apply text-[white];
+  background: rgb(53, 53, 53);
+}
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+.btn-color-2 {
+  background: none;
+}
+.btn-color-2:hover {
+  @apply border border-white;
+}
+
+/* ABOUT SECTION */
+#about {
+  @apply relative;
+}
+.about-containers {
+  @apply gap-8 my-8;
+}
+.about-details-container {
+  @apply justify-center flex-col;
+}
+.about-containers,
+.about-details-container {
+  @apply flex;
+}
+.about-pic {
+  @apply rounded-[2rem];
+}
+.arrow {
+  @apply absolute right-[-5rem] bottom-10;
+}
+.details-container {
+  @apply flex-1 border border-[#353535] text-center p-6 rounded-[2rem];
+  background: white;
+}
+
+/* EXPERIENCE SECTION */
+#experience {
+  @apply relative;
+}
+.experience-sub-title {
+  @apply text-[rgb(85,85,85)] font-semibold text-[1.75rem] mb-8;
+}
+.experience-details-container {
+  @apply flex justify-center flex-col;
+}
+.article-container {
+  @apply flex flex-wrap flex-row gap-10 justify-around;
+  text-align: initial;
+}
+article {
+  @apply flex w-40 justify-around gap-2;
+}
+article .icon {
+  @apply cursor-default;
+}
+
+/* PROJECTS SECTION */
+#projects {
+  @apply relative;
+}
+.color-container {
+  @apply border-neutral-400;
+  background: rgb(250, 250, 250);
+}
+.project-img {
+  @apply w-[90%] h-[90%] rounded-[2rem];
+}
+.project-title {
+  @apply text-[black] m-4;
+}
+.project-btn {
+  @apply text-[black] border-neutral-400;
+}
+
+/* CONTACT */
+#contact {
+  @apply flex justify-center flex-col h-[70vh];
+}
+.contact-info-upper-container {
+  @apply flex justify-center border border-[#353535] mx-auto my-8 p-2 rounded-[2rem];
+  background: (250, 250, 250);
+}
+.contact-info-container {
+  @apply flex items-center justify-center gap-2 m-4;
+}
+.contact-info-container p {
+  @apply text-[larger];
+}
+.contact-icon {
+  @apply cursor-default;
+}
+.email-icon {
+  @apply h-10;
+}
+
+/* FOOTER SECTION */
+footer {
+  @apply h-[26vh] mx-4 my-0;
+}
+footer p {
+  @apply text-center;
+}
