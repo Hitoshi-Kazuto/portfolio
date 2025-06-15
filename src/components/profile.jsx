@@ -7,7 +7,7 @@ const Profile = () => {
   return (
     <section id="profile" className="section min-h-screen flex items-center">
       <div className="container-custom">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Column - Image */}
           <div className="relative">
             <div className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px] mx-auto">
@@ -26,15 +26,15 @@ const Profile = () => {
           <div className="text-center md:text-left">
             <p className="text-blue-600 font-medium mb-2">Hello, I'm</p>
             <h1 className="heading-1 mb-4">Shreyas</h1>
-            <p className="text-2xl md:text-3xl font-medium text-slate-600 mb-8">
-              Full Stack Developer | AI Enthusiast | B.Tech CSE, 2026 
+            <p className="text-xl md:text-3xl font-medium text-slate-600 mb-6 md:mb-8">
+            Full Stack Developer | AI Enthusiast | B.Tech CSE, 2026 
             </p>
             
-            <p className="text-body max-w-lg mb-8">
-            Full Stack Developer exploring the intersection of Web Development and Generative AI. I build and deploy intelligent, user-centric apps using React, Node.js with integration of GenAI.
+            <p className="text-body max-w-lg mx-auto md:mx-0 mb-6 md:mb-8">
+            Building intelligent web apps at the edge of Full Stack Development and Generative AI.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6 md:mb-8">
               <a
                 href={resume}
                 target="_blank"

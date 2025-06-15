@@ -37,11 +37,11 @@ html {
   }
 
   .section {
-    @apply py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto;
+    @apply py-12 md:py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto min-h-screen;
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .heading-1 {
@@ -185,7 +185,7 @@ a {
 
 /* SECTIONS */
 section {
-  @apply h-[96vh] box-border min-h-fit mx-40 my-0 pt-[4vh];
+  @apply min-h-screen box-border mx-4 md:mx-8 lg:mx-40 my-0 pt-[4vh];
 }
 .section-container {
   @apply flex gap-16 h-4/5;
@@ -193,10 +193,10 @@ section {
 
 /* PROFILE SECTION */
 #profile {
-  @apply flex justify-center gap-20 h-[80vh];
+  @apply flex flex-col md:flex-row justify-center gap-8 md:gap-20 min-h-screen;
 }
 .section__pic-container {
-  @apply flex h-[400px] w-[400px] mx-0 my-auto h-[400px] w-[400px] mx-0 my-auto;
+  @apply flex h-[280px] w-[280px] md:h-[400px] md:w-[400px] mx-auto;
 }
 .section__text {
   @apply self-center text-center;
@@ -339,7 +339,7 @@ article .icon {
 
 /* FOOTER SECTION */
 footer {
-  @apply h-[26vh] mx-4 my-0;
+  @apply h-[15vh] mx-4 my-0;
 }
 footer p {
   @apply text-center;

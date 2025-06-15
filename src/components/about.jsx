@@ -6,12 +6,12 @@ const About = () => {
   return (
     <section id="about" className="section bg-slate-50">
       <div className="container-custom">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <p className="text-blue-600 font-medium mb-2">Get To Know More</p>
           <h2 className="heading-2">About Me</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Column - Image */}
           <div className="relative">
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
@@ -25,40 +25,37 @@ const About = () => {
           </div>
           
           {/* Right Column - Content */}
-          <div className="space-y-8">
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="card p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-lg flex items-center justify-center">
+          <div className="space-y-6 md:space-y-8">
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+              <div className="card p-4 md:p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 bg-blue-100 rounded-lg flex items-center justify-center">
                   <img
                     src={experience}
                     alt="Experience icon"
-                    className="h-6 w-6"
+                    className="h-5 w-5 md:h-6 md:w-6"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Experience</h3>
-                <p className="text-slate-600">Less than 1 year<br />Full-Stack Development</p>
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Experience</h3>
+                <p className="text-slate-600 text-sm md:text-base">Less than 1 year<br />Full-Stack Development</p>
               </div>
               
-              <div className="card p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-lg flex items-center justify-center">
+              <div className="card p-4 md:p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 bg-blue-100 rounded-lg flex items-center justify-center">
                   <img
                     src={education}
                     alt="Education icon"
-                    className="h-6 w-6"
+                    className="h-5 w-5 md:h-6 md:w-6"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Education</h3>
-                <p className="text-slate-600">B.Tech. Computer Science</p>
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Education</h3>
+                <p className="text-slate-600 text-sm md:text-base">B.Tech. Computer Science</p>
               </div>
             </div>
             
-            <div className="card p-8">
+            <div className="card p-6 md:p-8">
               <p className="text-body leading-relaxed">
-                I am a Senior year student @ JIIT, Noida. With a strong passion for technology 
-                and a particular inclination towards web development. I possess a keen aptitude for 
-                problem-solving and interested to mastering dynamic and user-friendly web applications.
-                I am eager to leverage my skills in collaborative projects and contribute to innovative web-based 
-                solutions in the tech industry.
+              Full Stack Developer exploring the intersection of Web Development and Generative AI. 
+              I build and deploy intelligent, user-centric apps using React, Node.js integrating with technologies like the Gemini API.
               </p>
             </div>
           </div>

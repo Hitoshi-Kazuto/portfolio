@@ -38,40 +38,34 @@ const Navbar = () => {
       isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
     }`}>
       <div className="container-custom">
-        <div className="flex items-center h-[10vh]">
-          <div className="flex items-center gap-8">
-            {/* <Link to="/" className="text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
-              SHREYAS
-            </Link> */}
-            
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <button
-                    onClick={() => handleNavigation(link.href)}
-                    className="text-slate-600 hover:text-slate-900 font-medium transition-colors duration-200"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-              <li>
-                <a
-                  href={resume}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
+        <div className="flex items-center justify-center h-[10vh]">
+          {/* Desktop Navigation */}
+          <ul className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <button
+                  onClick={() => handleNavigation(link.href)}
+                  className="text-slate-600 hover:text-slate-900 font-medium transition-colors duration-200"
                 >
-                  Resume
-                </a>
+                  {link.label}
+                </button>
               </li>
-            </ul>
-          </div>
+            ))}
+            <li>
+              <a
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Resume
+              </a>
+            </li>
+          </ul>
 
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors ml-auto"
+            className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -90,28 +84,30 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden`}>
-          <div className="py-4 space-y-1">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNavigation(link.href)}
-                className="block w-full text-left px-4 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+        <div className={`md:hidden fixed inset-0 bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}>
+          <div className="container-custom h-full flex flex-col items-center justify-center">
+            <div className="space-y-6 text-center">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => handleNavigation(link.href)}
+                  className="block w-full text-xl text-slate-600 hover:text-slate-900 font-medium transition-colors"
+                >
+                  {link.label}
+                </button>
+              ))}
+              <a
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
               >
-                {link.label}
-              </button>
-            ))}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block px-4 py-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Resume
-            </a>
+                Resume
+              </a>
+            </div>
           </div>
         </div>
       </div>
