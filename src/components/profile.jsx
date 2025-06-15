@@ -1,48 +1,83 @@
-import profile from "../../public/assets/my-photo.jpg";
+import profile from "../../public/assets/my-profile.png";
 import linkedin from "../../public/assets/linkedin.png";
 import github from "../../public/assets/github.png";
-import resume from '../../public/assets/Shreyas_Resume.pdf';
+import resume from '../../public/assets/resume.pdf';
 
 const Profile = () => {
   return (
-    <section id="profile" className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 h-auto md:h-[100vh] mx-4 md:mx-40 pt-4">
-      <div className="flex h-[300px] w-[300px] md:h-[400px] md:w-[400px] rounded-full overflow-hidden">
-        <img src={profile} alt="My profile picture" className="object-cover w-full h-full" />
-      </div>
-      
-      <div className="text-center">
-        <p className="font-semibold">Hello, I'm</p>
-        <h1 className="text-3xl md:text-5xl text-center">Shreyas</h1>
-        <p className="text-xl md:text-2xl mb-4">Full-Stack Web Developer</p>
-        
-        <div className="flex justify-center gap-5">
-          <button
-            onClick={() => window.open(resume)}
-            className="btn btn-secondary"
-          >
-            Download CV
-          </button>
-          <button
-            onClick={() => window.location.href='#contact'}
-            className="btn btn-primary"
-          >
-            Contact Info
-          </button>
-        </div>
-        
-        <div className="flex justify-center mt-4 gap-5">
-          <img
-            src= {linkedin}
-            alt="My LinkedIn profile"
-            className="h-6 md:h-8 cursor-pointer"
-            onClick={() => window.open('https://www.linkedin.com/in/shreyas-88b726222/', '_blank')}
-          />
-          <img
-            src={github}
-            alt="My Github profile"
-            className="h-6 md:h-8 cursor-pointer"
-            onClick={() => window.open('https://github.com/Hitoshi-Kazuto', '_blank')}
-          />
+    <section id="profile" className="section min-h-screen flex items-center">
+      <div className="container-custom">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Image */}
+          <div className="relative">
+            <div className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px] mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full opacity-20 blur-2xl"></div>
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
+                <img 
+                  src={profile} 
+                  alt="My profile picture" 
+                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Content */}
+          <div className="text-center md:text-left">
+            <p className="text-blue-600 font-medium mb-2">Hello, I'm</p>
+            <h1 className="heading-1 mb-4">Shreyas</h1>
+            <p className="text-2xl md:text-3xl font-medium text-slate-600 mb-8">
+              Full Stack Developer | AI Enthusiast | B.Tech CSE, 2026 
+            </p>
+            
+            <p className="text-body max-w-lg mb-8">
+            Full Stack Developer exploring the intersection of Web Development and Generative AI. I build and deploy intelligent, user-centric apps using React, Node.js with integration of GenAI.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+              <a
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Download CV
+              </a>
+              <a
+                href="#contact"
+                className="btn btn-secondary"
+              >
+                Contact Info
+              </a>
+            </div>
+            
+            <div className="flex gap-6 justify-center md:justify-start">
+              <a
+                href="https://www.linkedin.com/in/shreyas-88b726222/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <img
+                  src={linkedin}
+                  alt="LinkedIn"
+                  className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
+              <a
+                href="https://github.com/Hitoshi-Kazuto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <img
+                  src={github}
+                  alt="GitHub"
+                  className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

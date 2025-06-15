@@ -1,18 +1,42 @@
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+  
+  const navLinks = [
+    { href: '#about', label: 'About' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' }
+  ]
+
   return (
-    <footer className="h-auto md:h-[26vh] mx-4">
-      <nav>
-        <div className="flex justify-center">
-          {/* Render the <ul> only on medium and larger screens */}
-          <ul className="hidden md:flex flex-row gap-8 text-lg md:text-xl">
-            <li><a href="#about" className="hover:text-gray-500">About</a></li>
-            <li><a href="#experience" className="hover:text-gray-500">Experience</a></li>
-            <li><a href="#projects" className="hover:text-gray-500">Projects</a></li>
-            <li><a href="#contact" className="hover:text-gray-500">Contact</a></li>
-          </ul>
+    <footer className="footer">
+      <div className="container-custom">
+        <div className="flex flex-col items-center">
+          <nav className="mb-8">
+            <ul className="flex flex-wrap justify-center gap-8">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-slate-600 hover:text-slate-900 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          
+          <div className="text-center">
+            <p className="text-slate-600">
+              © {currentYear} Shreyas. All rights reserved.
+            </p>
+            <p className="text-slate-500 text-sm mt-2">
+              Built with React and Tailwind CSS
+            </p>
+          </div>
         </div>
-      </nav>
-      <p className="text-center text-gray-600 mt-4">Copyright © {(new Date().getFullYear())} Shreyas. All Rights Reserved.</p>
+      </div>
     </footer>
   )
 }

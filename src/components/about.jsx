@@ -1,67 +1,70 @@
-import profile from "../../public/assets/my-profile.png";
+import profile from "../../public/assets/my-photo.jpg";
 import experience from "../../public/assets/experience.png";
 import education from "../../public/assets/education.png";
-import arrow from "../../public/assets/arrow.png";
 
 const About = () => {
   return (
-    <section id="about" className="relative mx-4 md:mx-40 pt-4 h-auto md:h-[96vh] min-h-fit">
-      <p className="text-center py-1">Get To Know More</p>
-      <h1 className="text-3xl md:text-5xl text-center font-semibold">About Me</h1>
-      
-      <div className="flex flex-col md:flex-row gap-8 md:gap-16 h-auto md:h-[80%]">
-        <div className="flex h-[300px] w-full md:h-[400px] m-auto">
-          <img
-            src={profile}
-            alt="Profile picture"
-            className="rounded-3xl w-full object-cover"
-          />
+    <section id="about" className="section bg-slate-50">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <p className="text-blue-600 font-medium mb-2">Get To Know More</p>
+          <h2 className="heading-2">About Me</h2>
         </div>
         
-        <div className="flex flex-col justify-center w-full">
-          <div className="flex flex-col md:flex-row gap-8 mb-8 mt-8">
-            <div className="flex-1 p-6 bg-white rounded-3xl border border-gray-400 text-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Image */}
+          <div className="relative">
+            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-20"></div>
               <img
-                src={experience}
-                alt="Experience icon"
-                className="h-8 mx-auto"
+                src={profile}
+                alt="Profile picture"
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
               />
-              <h3 className="text-xl font-semibold">Experience</h3>
-              <p>Less than 1 year <br />Full-Stack Development</p>
-            </div>
-            
-            <div className="flex-1 p-6 bg-white rounded-3xl border border-gray-400 text-center">
-              <img
-                src={education}
-                alt="Education icon"
-                className="h-8 mx-auto"
-              />
-              <h3 className="text-xl font-semibold">Education</h3>
-              <p>B.Tech. Computer Science</p>
             </div>
           </div>
           
-          <div className="text-gray-600">
-            <p>
-            I am a Junior year student @ JIIT, Noida. <br />
-            With a strong passion for technology 
-            and a particular inclination towards web development. I possess a keen aptitude for 
-            problem-solving and interested to mastering dynamic and user-friendly web applications.
-            I am eager to leverage my skills in collaborative projects and contribute to innovative web-based 
-            solutions in the tech industry.
-
+          {/* Right Column - Content */}
+          <div className="space-y-8">
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                <div className="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <img
+                    src={experience}
+                    alt="Experience icon"
+                    className="h-6 w-6"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Experience</h3>
+                <p className="text-slate-600">Less than 1 year<br />Full-Stack Development</p>
+              </div>
+              
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                <div className="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <img
+                    src={education}
+                    alt="Education icon"
+                    className="h-6 w-6"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Education</h3>
+                <p className="text-slate-600">B.Tech. Computer Science</p>
+              </div>
+            </div>
             
-            </p>
+            <div className="card p-8">
+              <p className="text-body leading-relaxed">
+                I am a Senior year student @ JIIT, Noida. With a strong passion for technology 
+                and a particular inclination towards web development. I possess a keen aptitude for 
+                problem-solving and interested to mastering dynamic and user-friendly web applications.
+                I am eager to leverage my skills in collaborative projects and contribute to innovative web-based 
+                solutions in the tech industry.
+              </p>
+            </div>
           </div>
         </div>
+
       </div>
-      
-      <img
-        src={arrow}
-        alt="Arrow icon"
-        className="h-8 cursor-pointer absolute -right-20 bottom-10"
-        onClick={() => window.location.href='#experience'}
-      />
     </section>
   )
 }

@@ -1,25 +1,72 @@
 import check from "../../public/assets/checkmark.png";
-import arrow from "../../public/assets/arrow.png";
 
-
-const ExperienceCard = ({ title, skills }) => {
+const ExperienceCard = ({ title, skills, icon }) => {
   return (
-    <div className="p-6 bg-white rounded-3xl border border-gray-400">
-      <h2 className="text-2xl font-semibold text-gray-600 mb-4">{title}</h2>
-      <div className="flex flex-wrap gap-4 justify-center">
+    <div className="card p-8 hover:shadow-lg transition-all duration-300">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+          <img
+            src={icon}
+            alt={`${title} icon`}
+            className="h-6 w-6"
+          />
+        </div>
+        <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
+      </div>
+      
+      <div className="grid sm:grid-cols-2 gap-6">
         {skills.map((skill) => (
-          <article key={skill.name} className="flex w-32 justify-start gap-2">
-            <img
-              src={check}
-              alt="Experience icon"
-              className="h-6"
-            />
+          <article key={skill.name} className="flex items-start gap-3">
+            <div className="w-5 h-5 mt-1">
+              <img
+                src={check}
+                alt="Checkmark"
+                className="w-full h-full"
+              />
+            </div>
             <div>
-              <h3 className="font-semibold">{skill.name}</h3>
-              <p className="text-gray-600">{skill.level}</p>
+              <h3 className="font-medium text-slate-900">{skill.name}</h3>
+              {skill.level && (
+                <p className="text-sm text-slate-600">{skill.level}</p>
+              )}
             </div>
           </article>
         ))}
+      </div>
+    </div>
+  )
+}
+
+const InternshipCard = ({ title, company, duration, description, technologies }) => {
+  return (
+    <div className="card p-8 hover:shadow-lg transition-all duration-300">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+          <img
+            src={check}
+            alt="Internship icon"
+            className="h-6 w-6"
+          />
+        </div>
+        <div>
+          <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
+          <p className="text-slate-600">{company}</p>
+        </div>
+      </div>
+      
+      <div className="space-y-4">
+        <p className="text-sm text-slate-500">{duration}</p>
+        <p className="text-body">{description}</p>
+        <div>
+          <h3 className="font-medium text-slate-900 mb-2">Technologies Used:</h3>
+          <div className="flex flex-wrap gap-2">
+            {technologies.map((tech) => (
+              <span key={tech} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -45,38 +92,74 @@ const Experience = () => {
   ]
 
   const deploymentSkills = [
-      { name: "Vercel", level: "Intermediate" },
-      { name: "AWS Free Tier", level: "Basic" },
-      { name: "Github", level: "Intermediate" }
+    { name: "Vercel", level: "Intermediate" },
+    { name: "AWS Free Tier", level: "Basic" },
+    { name: "Github", level: "Intermediate" }
   ]
 
   const softSkills = [
-      { name: "Problem Solving", level: "" },
-      { name: "Adaptability", level: "" },
-      { name: "Collaboration", level: "" },
-      { name: "Leadership", level: "" }
+    { name: "Problem Solving" },
+    { name: "Adaptability" },
+    { name: "Collaboration" },
+    { name: "Leadership" }
+  ]
+
+  const internships = [
+    {
+      title: "Full Stack Developer Intern",
+      company: "Orbis International",
+      duration: "6 Months",
+      description: "Developed a comprehensive ticket management system for tracking and resolving customer issues. Implemented features for ticket creation, assignment, tracking, and resolution. Created a responsive frontend using React and Tailwind CSS, with a robust backend using Node.js and Express.",
+      technologies: ["React", "Node.js", "Express", "Tailwind CSS", "PostgreSQL", "Git", "Vercel", "AWS"]
+    }
   ]
 
   return (
-    <section id="experience" className="relative mx-4 md:mx-40 pt-4 h-auto md:h-[96vh] min-h-fit">
-      <p className="text-center py-1">Explore My</p>
-      <h1 className="text-3xl md:text-5xl font-semibold text-center">Experience</h1>
-      
-      <div className="flex flex-col justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 mt-8">
-          <ExperienceCard title="Frontend Development" skills={frontendSkills} />
-          <ExperienceCard title="Backend Development" skills={backendSkills} />
-          <ExperienceCard title="Project Deployment" skills={deploymentSkills} />
-          <ExperienceCard title="Soft Skills" skills={softSkills} />
+    <section id="experience" className="section">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <p className="text-blue-600 font-medium mb-2">Explore My</p>
+          <h2 className="heading-2">Experience</h2>
+        </div>
+        
+        {/* Internship Section */}
+        <div className="mb-16">
+          <h3 className="heading-3 mb-8">Internships</h3>
+          <div className="grid gap-8">
+            {internships.map((internship) => (
+              <InternshipCard
+                key={internship.title}
+                {...internship}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <h3 className="heading-3 mb-8">Skills</h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <ExperienceCard 
+            title="Frontend Development" 
+            skills={frontendSkills}
+            icon={check}
+          />
+          <ExperienceCard 
+            title="Backend Development" 
+            skills={backendSkills}
+            icon={check}
+          />
+          <ExperienceCard 
+            title="Project Deployment" 
+            skills={deploymentSkills}
+            icon={check}
+          />
+          <ExperienceCard 
+            title="Soft Skills" 
+            skills={softSkills}
+            icon={check}
+          />
         </div>
       </div>
-      
-      <img
-        src={arrow}
-        alt="Arrow icon"
-        className="h-8 cursor-pointer absolute -right-20 bottom-10"
-        onClick={() => window.location.href='#projects'}
-      />
     </section>
   )
 }
