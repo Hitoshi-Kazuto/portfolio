@@ -1,7 +1,6 @@
 import profile from "../../public/assets/my-profile.png";
 import linkedin from "../../public/assets/linkedin.png";
 import github from "../../public/assets/github.png";
-import resume from '../../public/assets/resume.pdf';
 
 const Profile = () => {
   return (
@@ -36,7 +35,7 @@ const Profile = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6 md:mb-8">
               <a
-                href={resume}
+                href="https://www.canva.com/design/DAGVEbawVvA/81hpgPBR2OVOQtlqPBpU6A/view?utlId=h0877ef56fc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"

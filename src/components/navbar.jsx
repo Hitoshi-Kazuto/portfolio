@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import resume from "../../public/assets/resume.pdf"
-import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -53,7 +51,7 @@ const Navbar = () => {
             ))}
             <li>
               <a
-                href={resume}
+                href="https://www.canva.com/design/DAGVEbawVvA/81hpgPBR2OVOQtlqPBpU6A/view?utlId=h0877ef56fc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -99,7 +97,7 @@ const Navbar = () => {
                 </button>
               ))}
               <a
-                href={resume}
+                href="https://www.canva.com/design/DAGVEbawVvA/81hpgPBR2OVOQtlqPBpU6A/view?utlId=h0877ef56fc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 text-blue-600 hover:text-blue-700 font-medium transition-colors"
